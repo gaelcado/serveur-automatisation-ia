@@ -49,4 +49,4 @@ Causes fréquentes :
 - URL HTTPS manquante.
 - Mauvais client ID ou mauvais projet fournisseur.
 
-Pour l'atelier, revenir en mock ou API-token tant que le callback public n'est pas le sujet.
+Revenir en mock ou API-token tant que le callback public n'est pas le sujet.

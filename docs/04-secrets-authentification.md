@@ -15,16 +15,22 @@ Une automatisation utile finit presque toujours par se connecter à des services
 
 - Navigateur local habituel pour les comptes web.
 - Device-code officiel quand un CLI l'affiche.
-- CLI officiel : `gh auth login`, `codex login`.
+- CLI officiel : `gh auth login`, `codex login`, `claude`.
 - Interface n8n ouverte par tunnel SSH.
 - Fichier `.env` local non commité, avec permissions limitées.
+- Secrets GitHub Actions pour les workflows GitHub.
+- Variables ou fichiers d'environnement systemd quand un service serveur en a besoin.
+
+## Navigateurs
+
+Le navigateur intégré Codex sert à prévisualiser et tester des pages sans connexion sensible. Pour les pages connectées, OAuth, comptes Google/Microsoft ou sessions personnelles, utilisez votre navigateur local habituel, une extension officielle ou le flux device-code du CLI.
 
 ## n8n et OAuth
 
 Gardez n8n en local-only pour apprendre. Pour certains connecteurs OAuth, le service externe doit rappeler une URL publique. Dans ce cas, trois options existent :
 
-- Mode mock ou API-token pendant l'atelier.
-- Tunnel temporaire pour une démonstration courte.
+- Mode mock ou API-token pendant la construction.
+- Tunnel temporaire pour un test court et maîtrisé.
 - Vrai domaine HTTPS avec reverse proxy et authentification.
 
 Ne publiez pas n8n sur Internet "juste pour tester".
@@ -45,15 +51,13 @@ codex login
 codex doctor --summary
 ```
 
-Le navigateur intégré Codex n'est pas le bon endroit pour gérer des pages connectées ou des flows OAuth sensibles. Utilisez le navigateur local ou le flux CLI prévu.
+Le chemin app distant demande aussi que `codex` soit disponible sur le `PATH` du serveur distant.
 
-## Claude optionnel
-
-Installez Claude Code seulement si vous voulez comparer les surfaces :
+## Claude
 
 ```bash
 claude
 claude doctor
 ```
 
-Gardez la même règle : pas de secrets dans le chat.
+Si vous utilisez Remote Control, gardez en tête que la surface web/mobile pilote une session configurée ailleurs. Les fichiers, credentials et outils viennent de l'environnement Claude Code connecté.

@@ -1,6 +1,6 @@
 # 02 - Installation guidée
 
-Cette installation vise un serveur Ubuntu/Debian. Les scripts gardent n8n en local-only et affichent un plan avant toute modification.
+Cette installation vise un serveur Ubuntu/Debian que vous contrôlez. Les scripts gardent n8n en local-only et affichent un plan avant toute modification.
 
 ## 1. Connexion
 
@@ -43,14 +43,17 @@ Quand le plan est compris :
 .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --apply --target auto
 ```
 
-Options utiles :
+Par défaut, le chemin complet installe Codex CLI et Claude Code. Pour ne pas installer Claude Code :
 
 ```bash
---with-claude
---with-app-server
+.agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --apply --target auto --no-claude
 ```
 
-Claude Code est optionnel. Codex app-server est avancé : il doit rester sur `127.0.0.1` et protégé par token.
+Codex app-server est une brique avancée. Activez-la seulement si vous voulez construire ou connecter un client qui pilote Codex :
+
+```bash
+.agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --apply --target auto --with-app-server
+```
 
 ## 5. Accès à n8n
 
@@ -68,5 +71,5 @@ Ne collez pas de secrets dans le chat. Utilisez :
 
 - `gh auth login` pour GitHub.
 - `codex login` pour Codex.
-- `claude` ou `claude doctor` seulement si Claude Code est installé.
+- `claude` ou `claude doctor` pour Claude Code.
 - L'interface n8n ouverte par tunnel pour créer les credentials n8n.

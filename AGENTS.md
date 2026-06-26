@@ -1,58 +1,68 @@
-# Instructions agents
+# Contexte agentique du projet
 
-Ce dépôt est un kit public pour apprenants. Il ne contient pas le programme formateur, les fiches personnelles, ni la trame interne du cours. Optimiser chaque contribution pour des personnes qui découvrent le terminal, les serveurs, n8n, Codex et les agents IA.
+Tu aides l'utilisateur à transformer une machine Linux qu'il contrôle en serveur d'automatisation IA. Ce dépôt est un contexte vivant pour diagnostiquer, installer, configurer et faire évoluer le serveur avec l'agent choisi par l'utilisateur.
 
-## Langue et ton
+## Mission
 
-- Écrire les explications destinées aux apprenants en français.
-- Garder les noms techniques officiels en anglais quand c'est leur nom produit : `Codex`, `Claude Code`, `n8n`, `GitHub CLI`, `systemd`.
-- Privilégier des phrases courtes, des commandes copiables, et des exemples sans secrets.
+- Rendre le serveur utilisable par un débutant sans masquer les notions importantes.
+- Installer et vérifier les briques : SSH, Git, GitHub CLI, Node/nvm, n8n, Codex CLI, Claude Code, systemd utilisateur, tunnels SSH, pare-feu.
+- Aider à choisir le bon chemin : VPS, serveur maison, Codex App, Claude Code, CLI, n8n, script, timer, service.
+- Créer ou améliorer des automatisations concrètes à partir des besoins de l'utilisateur.
+- Garder les secrets hors chat et les services sensibles hors Internet public.
 
 ## Découverte progressive
 
-Commencer par le minimum utile, puis charger le détail seulement si nécessaire :
+Avancer dans cet ordre :
 
-1. Lire ce fichier.
-2. Lire `README.md` pour l'objectif général.
-3. Lire le guide `docs/` le plus proche de la demande.
-4. Lire le skill pertinent dans `.agents/skills/<nom>/SKILL.md`.
-5. Lire seulement les références explicitement indiquées par ce skill.
-6. Exécuter les scripts en mode diagnostic ou `--plan` avant tout mode `--apply`.
+1. Lire `README.md`.
+2. Identifier la demande : installation, diagnostic, accès distant, authentification, création d'automatisation, dépannage.
+3. Lire le guide pertinent dans `docs/`.
+4. Si la tâche touche au serveur, lire `.agents/skills/installer-serveur-automatisation/SKILL.md`.
+5. Lire seulement les références explicitement utiles dans la skill.
+6. Lancer d'abord un diagnostic ou un plan avant toute action qui modifie la machine.
 
-## Sécurité
+## Règles d'action
 
-- Ne jamais demander de coller un token, une clé API, un secret OAuth, une clé SSH privée ou un fichier d'authentification dans le chat.
-- Pour les authentifications, guider l'utilisateur vers son navigateur local, un flux device-code, le CLI officiel ou l'interface n8n ouverte par tunnel SSH.
-- Garder n8n, Codex app-server et les panneaux d'administration en écoute locale (`127.0.0.1`) sauf demande explicite et mise en place HTTPS/auth.
-- Utiliser des données fictives ou anonymisées dans les exemples publics.
-- Ne pas réintroduire les fiches apprenants ni le dossier formateur dans le dépôt public.
+- Toujours distinguer machine locale, serveur distant, VPS, serveur maison et navigateur local.
+- Avant installation, exécuter :
 
-## Vérifications attendues
+  ```bash
+  .agents/skills/installer-serveur-automatisation/scripts/diagnostic_serveur.sh
+  .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --plan --target auto
+  ```
 
-Après modification :
+- Pour appliquer une installation, utiliser `--apply` seulement quand l'utilisateur comprend ce qui va changer.
+- Garder n8n en `127.0.0.1:5678` et fournir un tunnel SSH pour l'ouvrir.
+- Proposer Codex et Claude comme deux chemins valides. Codex est souvent le chemin le plus simple pour connecter un hôte SSH depuis l'app ; Claude Code est aussi un chemin complet avec CLI, IDE, Remote Control et intégrations.
+- Pour les automatisations, préférer ce partage des rôles :
+
+  ```text
+  n8n orchestre -> scripts fiabilisent -> IA lit/rédige/classe -> humain valide les actions sensibles
+  ```
+
+## Secrets et authentification
+
+- Ne jamais demander de coller un token, une clé API, un secret OAuth, une clé SSH privée, un mot de passe ou un fichier d'authentification dans le chat.
+- Guider l'utilisateur vers son navigateur local, un flux device-code, un CLI officiel ou l'interface n8n ouverte par tunnel SSH.
+- Expliquer où stocker les secrets : gestionnaire de secrets, `.env` non commité, credentials n8n, variables systemd, secrets GitHub Actions.
+- Ne pas exposer n8n publiquement pour résoudre un problème OAuth sans expliquer les risques et les alternatives.
+
+## Vérifications
+
+Après modification du dépôt :
 
 ```bash
 python3 "${HOME}/.codex/skills/.system/skill-creator/scripts/quick_validate.py" .agents/skills/installer-serveur-automatisation
 python3 "${HOME}/.codex/skills/.system/skill-creator/scripts/quick_validate.py" .agents/skills/grill-me
 python3 "${HOME}/.codex/skills/.system/skill-creator/scripts/quick_validate.py" .agents/skills/find-skills
-```
-
-Pour les scripts shell :
-
-```bash
 bash -n .agents/skills/installer-serveur-automatisation/scripts/diagnostic_serveur.sh
 bash -n .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh
 .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --plan --target auto
 ```
 
-## Publication
-
-Avant un push public, vérifier :
+Avant publication :
 
 ```bash
+rg -n "Fiche Cas|student-objectives|demo-brief|secret réel|api key|token privé" .
 git status
-git diff --cached
-rg -n "<motifs sensibles propres au contexte>" .
 ```
-
-Relire tout résultat avant publication.

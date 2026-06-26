@@ -7,7 +7,7 @@ Avantages :
 - IP publique et SSH direct.
 - Redémarrage et console depuis le panneau fournisseur.
 - Snapshots et sauvegardes souvent disponibles.
-- Plus simple pour un atelier à distance.
+- Plus simple pour une machine accessible depuis l'extérieur.
 
 Points d'attention :
 
@@ -16,7 +16,7 @@ Points d'attention :
 - Le fournisseur ne sécurise pas votre application à votre place.
 - Garder n8n en `127.0.0.1` et utiliser un tunnel SSH.
 
-Hostinger est souvent plus guidé pour débutants. OVHcloud est très pertinent en France et expose davantage les notions infra. Pour un premier atelier, conseiller Ubuntu LTS, SSH par clé, snapshot, et un pare-feu qui n'ouvre que SSH.
+Hostinger est souvent plus guidé pour débutants. OVHcloud est très pertinent en France et expose davantage les notions infra. Pour un premier serveur, conseiller Ubuntu LTS, SSH par clé, snapshot, et un pare-feu qui n'ouvre que SSH.
 
 Références :
 

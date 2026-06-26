@@ -1,22 +1,22 @@
 # 01 - Choisir son serveur
 
-Vous avez besoin d'une machine qui reste disponible pendant vos tests d'automatisation. Deux chemins sont possibles : louer un VPS ou utiliser un serveur maison.
+Vous avez besoin d'une machine qui reste disponible pendant vos automatisations. Deux chemins sont possibles : louer un VPS ou utiliser un serveur maison.
 
 ## Chemin A : VPS
 
-Un VPS est une petite machine Linux louée chez un hébergeur. C'est le chemin le plus simple pour un atelier : IP publique stable, accès SSH direct, redémarrage propre depuis un panneau web, sauvegardes en option.
+Un VPS est une petite machine Linux louée chez un hébergeur. C'est le chemin le plus direct si vous voulez une machine accessible par SSH depuis n'importe où.
 
-Pour débuter, cherchez plutôt :
+Cherchez plutôt :
 
 - Ubuntu LTS récent.
-- 2 Go de RAM minimum ; 4 Go plus confortable pour n8n, Node et des agents.
-- Accès SSH avec clé publique.
+- 2 Go de RAM minimum ; 4 Go est plus confortable pour n8n, Node, Codex et Claude Code.
+- Accès SSH par clé publique.
 - Snapshot ou sauvegarde avant les manipulations risquées.
 - Pare-feu simple : SSH ouvert, n8n fermé au public.
 
 ## Chemin B : serveur maison
 
-Un serveur maison est une machine chez vous : mini-PC, vieux laptop, NAS Linux, Raspberry Pi récent. C'est très formateur, mais vous gérez plus de choses.
+Un serveur maison est une machine chez vous : mini-PC, vieux laptop, NAS Linux, Raspberry Pi récent. C'est très utile si vous voulez comprendre votre propre infrastructure.
 
 Points à comprendre :
 
@@ -26,7 +26,7 @@ Points à comprendre :
 - L'IP publique peut changer.
 - Les coupures électriques et le Wi-Fi instable deviennent des sujets d'infrastructure.
 
-Pour l'atelier, un serveur maison est très bien si vous travaillez sur le réseau local ou via SSH déjà configuré. Pour exposer un service public, prenez le temps de comprendre HTTPS, DNS, reverse proxy et authentification.
+Pour débuter, travaillez en réseau local, via VPN, Tailscale, WireGuard ou SSH déjà configuré. N'exposez un service public qu'après avoir compris HTTPS, DNS, reverse proxy et authentification.
 
 ## Parcours France : Hostinger
 
@@ -51,7 +51,7 @@ OVHcloud est très présent en France et donne une bonne exposition aux notions 
 
 À regarder pendant la création :
 
-- Pour un atelier débutant, un VPS Ubuntu est plus simple que Public Cloud.
+- Pour débuter, un VPS Ubuntu est plus simple que Public Cloud.
 - Importer une clé SSH dans le Manager si possible.
 - Noter l'utilisateur initial indiqué par OVHcloud selon l'image.
 - Garder l'accès public limité à SSH au départ.
@@ -64,4 +64,4 @@ Références fournisseur :
 
 ## Décision rapide
 
-Choisissez un VPS si vous voulez avancer vite, avoir une IP publique simple et éviter les sujets routeur. Choisissez un serveur maison si votre objectif est aussi de comprendre l'infrastructure domestique, le réseau local et l'hébergement personnel.
+Choisissez un VPS si vous voulez une machine simple à joindre en SSH depuis l'extérieur. Choisissez un serveur maison si vous voulez apprendre en profondeur le réseau local et l'hébergement personnel.

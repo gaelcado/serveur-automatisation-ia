@@ -3,7 +3,7 @@ set -Eeuo pipefail
 
 MODE=""
 TARGET="auto"
-WITH_CLAUDE=false
+WITH_CLAUDE=true
 WITH_APP_SERVER=false
 EMIT_DIR=""
 
@@ -16,8 +16,8 @@ CODEX_TOKEN_FILE="${CODEX_TOKEN_FILE:-$HOME/.config/codex-app-server/ws-token}"
 usage() {
   cat <<'USAGE'
 Usage :
-  installer_serveur_automatisation.sh --plan [--target auto|vps|home] [--with-claude] [--with-app-server]
-  installer_serveur_automatisation.sh --apply [--target auto|vps|home] [--with-claude] [--with-app-server]
+  installer_serveur_automatisation.sh --plan [--target auto|vps|home] [--no-claude] [--with-app-server]
+  installer_serveur_automatisation.sh --apply [--target auto|vps|home] [--no-claude] [--with-app-server]
   installer_serveur_automatisation.sh --emit-service-templates DOSSIER [--with-app-server]
 
 Variables :
@@ -42,6 +42,7 @@ while [ "$#" -gt 0 ]; do
       shift 2
       ;;
     --with-claude) WITH_CLAUDE=true; shift ;;
+    --no-claude) WITH_CLAUDE=false; shift ;;
     --with-app-server) WITH_APP_SERVER=true; shift ;;
     --emit-service-templates)
       EMIT_DIR="${2:-}"
@@ -224,7 +225,7 @@ ensure_node_packages() {
   if [ "$WITH_CLAUDE" = true ]; then
     run_shell 'export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh"; npm install -g @anthropic-ai/claude-code'
   else
-    log "Claude Code ignore ; ajouter --with-claude pour l'installer"
+    log "Claude Code ignore a la demande ; retirer --no-claude pour l'installer"
   fi
 }
 
@@ -286,6 +287,10 @@ GitHub :
 Codex :
   codex login
   codex doctor --summary
+
+Claude :
+  claude
+  claude doctor
 
 n8n depuis l'ordinateur local :
   ssh -N -L 5678:127.0.0.1:5678 $USER@$host_hint

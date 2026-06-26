@@ -83,7 +83,7 @@ else
   echo "codex non installe"
 fi
 
-section "Claude optionnel"
+section "Claude Code"
 if command -v claude >/dev/null 2>&1; then
   echo "claude: installe"
   echo "lancer 'claude doctor' manuellement si un diagnostic auth est necessaire"

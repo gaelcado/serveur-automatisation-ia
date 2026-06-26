@@ -1,6 +1,6 @@
 # Instructions pour les skills du projet
 
-Les skills de ce dossier sont embarqués dans un dépôt public pour apprenants.
+Les skills de ce dossier sont embarqués dans un dépôt public pour utilisateurs.
 
 ## Format
 
@@ -21,4 +21,4 @@ Chaque skill doit :
 
 ## Langue
 
-Écrire les instructions apprenant en français. Conserver les noms de commandes et de produits en anglais lorsqu'ils sont officiels.
+Écrire les instructions utilisateur en français. Conserver les noms de commandes et de produits en anglais lorsqu'ils sont officiels.

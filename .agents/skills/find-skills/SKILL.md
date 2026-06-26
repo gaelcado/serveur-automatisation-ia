@@ -35,4 +35,4 @@ npx skills update
 - Ne pas recommander uniquement sur le nom.
 - Préférer les sources reconnues ou maintenues.
 - Éviter les skills peu documentés pour des tâches sensibles.
-- Pour un cours, préférer un skill local simple et lisible à une dépendance magique.
+- Pour ce dépôt, préférer un skill local simple et lisible à une dépendance magique.
