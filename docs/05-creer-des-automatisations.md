@@ -19,7 +19,7 @@ Donnez à l'agent :
 Exemple :
 
 ```text
-Utilise ce dépôt comme contexte. Je veux une automatisation n8n qui lit un fichier CSV local, détecte les lignes incomplètes avec un script Python, puis prépare un brouillon de message. Aucun envoi externe sans validation humaine.
+Utilise ce dépôt comme contexte. Si le setup local n'est pas clair, commence par $setup-projet-automatisation. Je veux une automatisation n8n qui lit un fichier CSV local, détecte les lignes incomplètes avec un script Python, puis prépare un brouillon de message. Aucun envoi externe sans validation humaine.
 ```
 
 ## Pattern recommandé
@@ -62,11 +62,11 @@ Si une ligne n'est pas claire, garder le scope en mock/local.
 ## Prompts utiles
 
 ```text
-Utilise ce dépôt comme contexte et aide-moi à créer une automatisation. Commence par me poser les questions nécessaires sur l'entrée, la sortie, les secrets et les validations humaines. Si USER.md manque, crée-le depuis USER.example.md. Mets-le à jour avec le brief validé, sans secret, puis enlève l'ancien contexte qui ne s'applique plus.
+Utilise ce dépôt comme contexte et aide-moi à créer une automatisation. Si le contexte local n'est pas prêt, utilise $setup-projet-automatisation. Commence par me poser les questions nécessaires sur l'entrée, la sortie, les secrets et les validations humaines. Mets à jour USER.md avec le brief validé, sans secret, puis enlève l'ancien contexte qui ne s'applique plus.
 ```
 
 ```text
-Diagnostique ce serveur avec la skill installer-serveur-automatisation, puis propose le plus petit plan pour rendre n8n accessible par tunnel SSH.
+Diagnostique ce serveur avec $installer-serveur-automatisation, puis propose le plus petit plan pour rendre n8n accessible par tunnel SSH.
 ```
 
 ```text

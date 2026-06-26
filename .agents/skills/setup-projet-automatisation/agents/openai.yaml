@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configurer le projet"
+  short_description: "Préparer le contexte local agentique"
+  default_prompt: "Utilise $setup-projet-automatisation pour initialiser ce dépôt, créer mon contexte local, choisir mon chemin et nettoyer la fin du setup."

@@ -27,7 +27,7 @@ Demandez à l'agent :
 ```text
 Je veux rester en local pour l'instant.
 
-Aide-moi à vérifier Git, Node ou Python selon le besoin, puis construis une première automatisation avec données locales ou fictives. Si USER.md manque, crée-le depuis USER.example.md. Pas de serveur, pas de service public, pas de secret dans le chat.
+Utilise $setup-projet-automatisation pour noter ce choix, puis aide-moi à vérifier Git, Node ou Python selon le besoin. Construis ensuite une première automatisation avec données locales ou fictives. Pas de serveur, pas de service public, pas de secret dans le chat.
 ```
 
 Selon le projet, l'agent peut vérifier :

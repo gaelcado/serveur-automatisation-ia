@@ -1,0 +1,4 @@
+interface:
+  display_name: "Réinitialiser le projet"
+  short_description: "Revenir à l'upstream avec garde-fous"
+  default_prompt: "Utilise $reset-projet-automatisation pour remettre ce dépôt à l'état upstream en gardant ou en effaçant mon contexte local."

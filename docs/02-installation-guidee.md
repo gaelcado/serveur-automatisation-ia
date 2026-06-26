@@ -2,9 +2,9 @@
 
 Cette installation vise un serveur Ubuntu/Debian que vous contrôlez. Les scripts gardent n8n en local-only et affichent un plan avant toute modification.
 
-Le mode recommandé est agent-led : l'agent lit la checklist, vous indique où lancer chaque commande, puis résume les preuves avant de continuer.
+Le mode recommandé est agent-led : l'agent utilise `$setup-projet-automatisation`, lit la checklist utile, vous indique où lancer chaque commande, puis résume les preuves avant de continuer.
 
-Avant de commencer, créer le carnet local si besoin :
+Avant de commencer, demander à l'agent d'utiliser `$setup-projet-automatisation`. La commande directe équivalente pour créer le carnet local si besoin est :
 
 ```bash
 cp USER.example.md USER.md

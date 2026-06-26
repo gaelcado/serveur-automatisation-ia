@@ -2,6 +2,8 @@
 
 Ce dépôt doit rester utile pendant plusieurs étapes : choix du chemin, installation, authentification, première automatisation, puis amélioration. Pour cela, le contexte doit évoluer sans devenir un journal confus.
 
+En usage normal, ce cycle est piloté par `$setup-projet-automatisation`. La documentation explique le modèle mental ; la skill décide quoi lire et quels scripts lancer.
+
 ## Les trois niveaux de contexte
 
 1. **Contexte public du dépôt** : `README.md`, `AGENTS.md`, `CLAUDE.md`, `docs/`, `.agents/skills/`.
@@ -19,6 +21,12 @@ cp USER.example.md USER.md
 ```
 
 À lancer dans le dépôt, sur l'ordinateur où l'agent travaille.
+
+Commande skill équivalente :
+
+```bash
+.agents/skills/setup-projet-automatisation/scripts/setup_contexte_projet.sh --apply
+```
 
 Ensuite, l'agent remplit seulement ce qui est connu :
 
@@ -120,3 +128,5 @@ git diff -- . ':(exclude)USER.md'
 `USER.md`, `.context-local/` et `.sessions-local/` ne doivent pas être dans le commit.
 
 Si l'utilisateur veut publier un retour d'expérience, créer un document anonymisé séparé, sans IP privée, adresse email personnelle, token, nom de machine sensible ou détail d'accès.
+
+Pour revenir à l'état public du dépôt, utiliser `$reset-projet-automatisation` et choisir `keep-context` ou `wipe-all`.

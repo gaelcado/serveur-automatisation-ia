@@ -5,6 +5,7 @@ Tu aides l'utilisateur à installer, comprendre et faire évoluer un environneme
 ## Principe de travail
 
 - Commence par `README.md`.
+- Pour tout démarrage, reprise de setup, choix de chemin ou cleanup de contexte, utilise `.agents/skills/setup-projet-automatisation/SKILL.md`.
 - Si `USER.md` existe, lis-le pour connaître l'état local du projet.
 - Si `USER.md` n'existe pas, lis `USER.example.md` et propose de créer `USER.md` avant de personnaliser le parcours.
 - Ne charge la documentation profonde que quand elle devient utile.
@@ -13,6 +14,7 @@ Tu aides l'utilisateur à installer, comprendre et faire évoluer un environneme
 - Utilise `docs/07-cycle-de-vie-du-contexte.md` quand le contexte local doit être créé, condensé, nettoyé ou archivé.
 - Utilise `docs/glossaire.md` pour traduire les termes techniques au bon niveau.
 - Si la tâche touche une installation serveur, lis `.agents/skills/installer-serveur-automatisation/SKILL.md`.
+- Si l'utilisateur veut repartir d'un état propre, revenir à l'upstream ou effacer le contexte local, lis `.agents/skills/reset-projet-automatisation/SKILL.md`.
 
 ## UX attendue
 
@@ -66,6 +68,16 @@ Si le dépôt est présent sur une machine Linux à configurer, commencer par :
 
 N'utiliser `--apply` qu'après avoir expliqué le plan à l'utilisateur.
 
+## Reset projet
+
+Pour revenir à l'upstream, ne pas improviser de commandes destructrices. Utiliser :
+
+```bash
+.agents/skills/reset-projet-automatisation/scripts/reset_projet_automatisation.sh --plan --mode keep-context
+```
+
+Puis choisir explicitement `keep-context` ou `wipe-all` avec l'utilisateur.
+
 ## Automatisations
 
 Avant de construire, extraire un mini brief :
@@ -92,10 +104,16 @@ données fictives/locales -> script fiable -> IA pour langage ou décision soupl
 
 ```bash
 python3 "${HOME}/.codex/skills/.system/skill-creator/scripts/quick_validate.py" .agents/skills/installer-serveur-automatisation
+python3 "${HOME}/.codex/skills/.system/skill-creator/scripts/quick_validate.py" .agents/skills/setup-projet-automatisation
+python3 "${HOME}/.codex/skills/.system/skill-creator/scripts/quick_validate.py" .agents/skills/reset-projet-automatisation
 python3 "${HOME}/.codex/skills/.system/skill-creator/scripts/quick_validate.py" .agents/skills/grill-me
 python3 "${HOME}/.codex/skills/.system/skill-creator/scripts/quick_validate.py" .agents/skills/find-skills
 bash -n .agents/skills/installer-serveur-automatisation/scripts/diagnostic_serveur.sh
 bash -n .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh
+bash -n .agents/skills/setup-projet-automatisation/scripts/setup_contexte_projet.sh
+bash -n .agents/skills/reset-projet-automatisation/scripts/reset_projet_automatisation.sh
 .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --plan --target auto
+.agents/skills/setup-projet-automatisation/scripts/setup_contexte_projet.sh --plan
+.agents/skills/reset-projet-automatisation/scripts/reset_projet_automatisation.sh --plan --mode keep-context
 git status --short
 ```

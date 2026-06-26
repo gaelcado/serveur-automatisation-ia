@@ -1,11 +1,12 @@
 # 00 - Checklist setup agentique
 
-Cette checklist est le fil rouge pour l'agent. Elle suppose que l'utilisateur a une app locale comme Codex ou Claude, mais pas forcément un serveur, SSH ou n8n.
+Cette checklist est chargée par `$setup-projet-automatisation` quand le chemin serveur devient pertinent. Elle suppose que l'utilisateur a une app locale comme Codex ou Claude, mais pas forcément un serveur, SSH ou n8n.
 
 Si l'utilisateur ne veut pas de serveur ni d'automatisation asynchrone pour l'instant, bifurquer vers `docs/06-chemin-local.md`.
 
 ## Mode d'emploi pour l'agent
 
+- Passer par `$setup-projet-automatisation` pour créer ou nettoyer le contexte local.
 - Identifier le niveau utilisateur : débutant, curieux technique, dev.
 - Dire où lancer chaque commande : ordinateur local ou serveur.
 - Ne jamais demander de secret dans le chat.
@@ -323,4 +324,4 @@ Fin de parcours :
 - condenser `USER.md` autour de l'état actuel ;
 - supprimer les hypothèses fausses ou chemins abandonnés ;
 - archiver le détail localement seulement si utile ;
-- lire `docs/07-cycle-de-vie-du-contexte.md` avant de continuer vers plusieurs automatisations.
+- relancer `$setup-projet-automatisation` en cleanup avant de continuer vers plusieurs automatisations.

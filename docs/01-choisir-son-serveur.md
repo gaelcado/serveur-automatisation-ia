@@ -9,7 +9,7 @@ Si vous n'avez encore rien, ne commencez pas par installer n8n. Commencez par ch
 Demandez à votre agent :
 
 ```text
-Aide-moi à choisir entre local seulement, VPS, serveur maison ou serveur déjà existant. Pose-moi seulement les questions nécessaires : budget, matériel disponible, besoin d'accès depuis l'extérieur, besoin d'automatisation continue, niveau réseau, et objectif d'automatisation.
+Utilise $setup-projet-automatisation pour m'aider à choisir entre local seulement, VPS, serveur maison ou serveur déjà existant. Pose-moi seulement les questions nécessaires : budget, matériel disponible, besoin d'accès depuis l'extérieur, besoin d'automatisation continue, niveau réseau, et objectif d'automatisation.
 ```
 
 Repère par niveau :

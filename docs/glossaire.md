@@ -136,6 +136,10 @@ Ce glossaire donne des définitions courtes. L'agent doit y renvoyer quand un mo
 
 **Skill** : dossier d'instructions, scripts et références qui enseigne à l'agent une capacité précise.
 
+**Skill de setup** : skill qui initialise le contexte local, choisit le chemin utilisateur et nettoie la fin de phase. Ici : `$setup-projet-automatisation`.
+
+**Skill de reset** : skill qui encadre une remise à zéro du dépôt avec garde-fous. Ici : `$reset-projet-automatisation`.
+
 **Context repo** : dépôt qui contient les règles, docs et scripts dont l'agent a besoin pour agir correctement.
 
 **AGENTS.md** : fichier d'instructions durable injecté par Codex et d'autres harnesses compatibles pour comprendre les règles du projet.

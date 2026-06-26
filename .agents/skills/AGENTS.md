@@ -10,6 +10,7 @@ Les skills de ce dossier sont embarqués dans un dépôt public pour utilisateur
 - Mettre à jour `agents/openai.yaml` quand le rôle du skill change.
 - Nommer les nouvelles skills en minuscules avec tirets, même si les contenus sont en français.
 - Garder `.agents/skills` comme source de vérité. `.claude/skills` doit rester un lien vers ce dossier pour Claude Code.
+- Le setup de projet et le reset doivent rester dans leurs skills dédiées, pas dispersés dans les docs racine.
 
 ## Découverte progressive
 
@@ -20,6 +21,7 @@ Chaque skill doit :
 3. Éviter de charger tous les détails d'un coup.
 4. Distinguer clairement diagnostic, plan et exécution.
 5. Adapter les explications aux niveaux débutant, curieux technique et dev quand la skill guide un humain.
+6. Prévoir un résumé de fin et le nettoyage du contexte quand la skill termine une phase.
 
 ## Langue
 

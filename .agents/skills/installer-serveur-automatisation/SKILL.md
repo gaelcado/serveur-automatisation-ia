@@ -1,42 +1,41 @@
 ---
 name: installer-serveur-automatisation
-description: Diagnostiquer, installer et expliquer un environnement d'automatisation IA pour débutants, du chemin local sans serveur au VPS Ubuntu/Debian ou serveur maison Linux. Utiliser quand Codex doit guider un utilisateur sans serveur prêt, sans bridge SSH, ou avec une machine à configurer pour SSH, Git, GitHub CLI, Node/nvm, n8n, Codex CLI, Claude Code, services systemd, tunnels SSH, authentifications sûres, accès distant via app/CLI, ou création d'automatisations agentiques avec n8n, scripts et validations humaines.
+description: Diagnostiquer, installer et expliquer une machine Linux d'automatisation IA Ubuntu/Debian pour débutants. Utiliser quand le chemin serveur est choisi ou qu'une machine VPS, serveur maison ou serveur existant doit être configurée pour SSH, Git, GitHub CLI, Node/nvm, n8n, Codex CLI, Claude Code, services systemd, tunnels SSH, authentifications sûres et accès distant via app/CLI.
 ---
 
 # Installer un serveur d'automatisation
 
-Utiliser ce skill pour guider l'utilisateur vers le bon environnement d'automatisation : local simple, VPS, serveur maison ou serveur existant. Quand une machine Linux serveur est choisie, la transformer en laboratoire d'automatisation accessible depuis l'ordinateur local, sans exposer n8n ni les panneaux d'administration sur Internet.
+Utiliser ce skill seulement après le choix d'un chemin serveur. Transformer une machine Linux en laboratoire d'automatisation accessible depuis l'ordinateur local, sans exposer n8n ni les panneaux d'administration sur Internet.
 
 ## Workflow par défaut
 
-1. Identifier le contexte : local seulement, pas de serveur, VPS à créer, serveur maison, serveur existant, SSH cassé, OS, droits sudo.
+1. Vérifier que le chemin serveur est choisi : VPS, serveur maison ou serveur existant.
 2. Identifier le niveau utilisateur : débutant, curieux technique, dev. Adapter la densité des explications.
-3. Lire `USER.md` à la racine du dépôt si présent. S'il manque, lire `USER.example.md` et proposer de créer `USER.md` avec `cp USER.example.md USER.md`.
-4. Si l'utilisateur veut rester en local sans serveur ni automatisation asynchrone, lire `docs/06-chemin-local.md` à la racine du dépôt et ne pas forcer l'installation serveur.
-5. Si l'utilisateur n'a pas encore de serveur ou de bridge SSH fiable, lire `docs/00-checklist-setup-agentique.md` à la racine du dépôt et suivre ses phases.
-6. Lire `references/chemins-serveur.md` si le choix VPS/serveur maison est encore flou.
-7. Une fois dans le dépôt sur le serveur, lancer le diagnostic :
+3. Lire `USER.md` à la racine du dépôt si présent pour connaître l'état local, sans en faire la source du setup projet.
+4. Si l'utilisateur veut rester en local, ou si le choix local/VPS/maison/existant est flou, revenir à `$setup-projet-automatisation`.
+5. Lire `references/chemins-serveur.md` seulement si le choix VPS/serveur maison doit être expliqué.
+6. Une fois dans le dépôt sur le serveur, lancer le diagnostic :
 
    ```bash
    .agents/skills/installer-serveur-automatisation/scripts/diagnostic_serveur.sh
    ```
 
-8. Préparer un plan sans mutation :
+7. Préparer un plan sans mutation :
 
    ```bash
    .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --plan --target auto
    ```
 
-9. Expliquer les actions prévues en langage simple avant tout `--apply`.
-10. Installer si l'utilisateur confirme :
+8. Expliquer les actions prévues en langage simple avant tout `--apply`.
+9. Installer si l'utilisateur confirme :
 
    ```bash
    .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --apply --target auto
    ```
 
-11. Guider les authentifications hors chat : navigateur local, device-code, CLI officiel ou n8n via tunnel SSH.
-12. Relancer le diagnostic, vérifier n8n local-only, puis proposer les chemins Codex et Claude adaptés.
-13. Mettre à jour `USER.md` avec les statuts, sans secret, puis supprimer ou condenser les hypothèses obsolètes.
+10. Guider les authentifications hors chat : navigateur local, device-code, CLI officiel ou n8n via tunnel SSH.
+11. Relancer le diagnostic, vérifier n8n local-only, puis proposer les chemins Codex et Claude adaptés.
+12. Mettre à jour `USER.md` avec les statuts serveur, sans secret, puis revenir à `$setup-projet-automatisation` pour le cleanup de fin de phase.
 
 Après chaque grande étape, rendre un résumé :
 
@@ -49,7 +48,6 @@ Blocage éventuel:
 
 ## Cibles
 
-- `local seulement` : pas de serveur, pas de service distant. Construire un prototype local avec fichiers, scripts, agent, validation humaine. Lire `../../../docs/06-chemin-local.md`.
 - `--target vps` : machine louée chez OVHcloud, Hostinger ou équivalent. Le pare-feu serveur compte beaucoup ; le routeur ne vous appartient pas.
 - `--target home` : serveur maison, mini-PC, NAS Linux ou vieille machine recyclée. Le routeur, le NAT, l'IP dynamique et les coupures électriques comptent beaucoup.
 - `--target auto` : détecter au mieux et rester prudent.
@@ -80,8 +78,7 @@ Ne traiter ni Codex ni Claude comme simple bonus. Choisir le chemin selon la mac
 
 ## Références à charger au besoin
 
-- `../../../docs/00-checklist-setup-agentique.md` : parcours complet quand il manque le serveur ou le bridge.
-- `../../../docs/06-chemin-local.md` : parcours local quand l'utilisateur ne veut pas de serveur.
+- `../../../.agents/skills/setup-projet-automatisation/SKILL.md` : setup projet si le chemin utilisateur ou le contexte local ne sont pas encore clairs.
 - `../../../docs/07-cycle-de-vie-du-contexte.md` : création, mise à jour, condensation et pruning du contexte local.
 - `../../../USER.example.md` : modèle de carnet local quand `USER.md` n'existe pas.
 - `../../../USER.md` : carnet de bord local à lire et mettre à jour sans secrets, s'il existe.

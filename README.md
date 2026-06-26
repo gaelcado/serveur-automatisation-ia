@@ -15,13 +15,13 @@ L'objectif n'est pas de tout rendre magique. L'objectif est de rendre chaque ét
 Ouvrez ce dossier avec Codex, Claude ou un autre agent de code, puis donnez-lui ce prompt de départ :
 
 ```text
-Utilise ce dépôt comme contexte de travail.
+Utilise $setup-projet-automatisation dans ce dépôt.
 
 Commence par comprendre mon objectif, mon niveau, et mon point de départ : local seulement, VPS, serveur maison, ou serveur déjà existant.
 
 Guide-moi étape par étape. Dis toujours où lancer les commandes : ordinateur local ou serveur. Ne me demande jamais de coller un secret dans le chat.
 
-Si USER.md n'existe pas, crée-le depuis USER.example.md. Mets-le ensuite à jour quand une décision durable est prise : niveau, machine choisie, accès validé, services installés, automatisations créées, limites à respecter. Nettoie aussi l'ancien contexte quand il devient faux ou inutile.
+Crée ou mets à jour mon contexte local, puis fais le cleanup de fin de setup quand le chemin est clair.
 ```
 
 Si vous préparez une automatisation importante, demandez d'abord à votre agent de passer en mode planification. Vous pouvez aussi lui demander d'utiliser la skill `grill-me` pour challenger le brief avant de construire.
@@ -40,12 +40,12 @@ Pour choisir, commencez par [docs/01-choisir-son-serveur.md](docs/01-choisir-son
 ## Parcours recommandé
 
 1. Lire cette page.
-2. Créer un carnet local depuis [USER.example.md](USER.example.md), ou laisser l'agent créer `USER.md` progressivement.
-3. Suivre [docs/00-checklist-setup-agentique.md](docs/00-checklist-setup-agentique.md) si vous partez vers un serveur.
-4. Utiliser [docs/06-chemin-local.md](docs/06-chemin-local.md) si vous restez en local.
-5. Installer ou diagnostiquer avec la skill `installer-serveur-automatisation` quand une machine Linux est prête.
+2. Invoquer `$setup-projet-automatisation`.
+3. Laisser l'agent créer `USER.md` depuis [USER.example.md](USER.example.md) si nécessaire.
+4. Suivre le chemin choisi : local, VPS, serveur maison ou serveur existant.
+5. Invoquer `$installer-serveur-automatisation` quand une machine Linux est prête.
 6. Créer une première automatisation minimale avec [docs/05-creer-des-automatisations.md](docs/05-creer-des-automatisations.md).
-7. Nettoyer régulièrement le contexte avec [docs/07-cycle-de-vie-du-contexte.md](docs/07-cycle-de-vie-du-contexte.md).
+7. Nettoyer le contexte en fin de phase avec `$setup-projet-automatisation`.
 
 Le vocabulaire technique est expliqué dans [docs/glossaire.md](docs/glossaire.md).
 
@@ -65,6 +65,8 @@ N'y mettez jamais de clé API, token, mot de passe, clé SSH privée, secret OAu
 
 Quand une piste devient obsolète, l'agent doit la supprimer, la condenser ou l'archiver localement au lieu de laisser plusieurs versions contradictoires dans le carnet.
 
+Pour repartir de zéro, invoquez `$reset-projet-automatisation`. La skill propose deux chemins : conserver le contexte local ou l'effacer.
+
 ## Règles de sécurité
 
 - Les secrets se saisissent dans un navigateur habituel, un flux device-code officiel, un CLI officiel ou l'interface n8n ouverte par tunnel SSH.
@@ -83,3 +85,11 @@ Quand une piste devient obsolète, l'agent doit la supprimer, la condenser ou l'
 - [Chemin local sans serveur](docs/06-chemin-local.md)
 - [Cycle de vie du contexte](docs/07-cycle-de-vie-du-contexte.md)
 - [Glossaire](docs/glossaire.md)
+
+## Skills principales
+
+- `$setup-projet-automatisation` : entrée du dépôt, choix du chemin, contexte local, cleanup.
+- `$installer-serveur-automatisation` : diagnostic et installation d'une machine Linux d'automatisation.
+- `$reset-projet-automatisation` : retour à l'upstream avec garde-fous.
+- `$grill-me` : challenge d'un brief d'automatisation avant construction.
+- `$find-skills` : découverte de skills complémentaires.
