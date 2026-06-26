@@ -17,34 +17,47 @@ Skill d'entrée du dépôt. Guider l'utilisateur et son agent depuis "j'ouvre le
    .agents/skills/setup-projet-automatisation/scripts/setup_contexte_projet.sh --plan
    ```
 
-4. Identifier le niveau : débutant, curieux technique, dev.
-5. Identifier le chemin : local seulement, VPS, serveur maison, serveur existant.
-6. Charger seulement la doc utile :
+4. Identifier les faits déjà connus et leurs preuves : prompt utilisateur, fichier existant, commande de diagnostic, ou réponse explicite.
+5. Demander les informations manquantes avant toute personnalisation de `USER.md` :
+   - objectif concret ;
+   - niveau d'explication souhaité ;
+   - point de départ : local seulement, VPS, serveur maison, serveur existant, ou "je ne sais pas".
+6. Identifier le chemin : local seulement, VPS, serveur maison, serveur existant, ou à confirmer.
+7. Charger seulement la doc utile :
    - `docs/06-chemin-local.md` pour local seulement.
    - `docs/00-checklist-setup-agentique.md` pour chemin serveur.
    - `docs/01-choisir-son-serveur.md` si le choix local/VPS/maison/existant est flou.
    - `docs/07-cycle-de-vie-du-contexte.md` pour mise à jour, changement de chemin ou cleanup.
-7. Après accord utilisateur, créer ou réparer le contexte local :
+8. Après accord utilisateur, créer ou réparer le contexte local :
 
    ```bash
    .agents/skills/setup-projet-automatisation/scripts/setup_contexte_projet.sh --apply
    ```
 
-8. Mettre à jour `USER.md` avec l'état durable, sans secret.
-9. Si une machine Linux doit être installée, passer à `$installer-serveur-automatisation`.
-10. En fin de setup, lancer le cleanup de contrôle :
+9. Mettre à jour `USER.md` uniquement avec l'état durable confirmé, sans secret.
+10. Si une machine Linux doit être installée, passer à `$installer-serveur-automatisation`.
+11. En fin de setup, lancer le cleanup de contrôle :
 
    ```bash
    .agents/skills/setup-projet-automatisation/scripts/setup_contexte_projet.sh --cleanup
    ```
 
-11. Résumer : état, preuve, prochain pas, contexte supprimé ou à oublier.
+12. Résumer : état, preuve, prochain pas, contexte supprimé ou à oublier.
+
+## Politique anti-invention
+
+- Ne pas deviner le niveau, l'objectif, le chemin, le fournisseur, l'OS, l'agent utilisé ou les préférences.
+- Ne pas écrire une option du modèle comme si elle était choisie.
+- Si l'information vient de l'environnement local, la formuler comme observation, pas comme préférence utilisateur.
+- Si l'information manque, écrire `à confirmer` ou demander une réponse courte.
+- Avant d'écrire une valeur personnalisée dans `USER.md`, pouvoir citer la source : utilisateur, fichier existant, commande, ou diagnostic.
 
 ## Règles UX
 
 - Dire explicitement où lancer chaque commande : dépôt local, serveur, ou interface web.
 - Ne jamais demander de secret dans le chat.
 - Ne pas charger toutes les docs d'un coup.
+- Commencer par 2 ou 3 questions maximum quand le point de départ est inconnu.
 - Pour débutant : une décision à la fois, vocabulaire court, lien vers `docs/glossaire.md`.
 - Pour curieux technique : expliquer le modèle mental.
 - Pour dev : donner préconditions, commandes et vérifications.

@@ -38,6 +38,8 @@ Phase actuelle:
 Prochain checkpoint:
 ```
 
+Si une information n'est pas confirmée, elle reste `à confirmer`. L'agent ne doit pas déduire un niveau, un fournisseur, un chemin ou une préférence à partir d'un exemple.
+
 ## Mise à jour progressive
 
 Mettre à jour `USER.md` quand une information devient durable :
@@ -51,6 +53,8 @@ Mettre à jour `USER.md` quand une information devient durable :
 - règle de sécurité ou d'autonomie décidée.
 
 Ne pas mettre à jour `USER.md` pour chaque commande essayée. Garder seulement les preuves utiles.
+
+Chaque valeur personnalisée doit avoir une source claire : réponse utilisateur, fichier existant, commande exécutée, ou diagnostic. Sans source claire, ne pas écrire la valeur comme un fait.
 
 ## Entrée de phase
 

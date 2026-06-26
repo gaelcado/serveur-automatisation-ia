@@ -19,10 +19,13 @@ Blocage principal:
 
 ## Profil
 
-- Niveau actuel : inconnu
-- Style d'explication préféré : inconnu
-- Système local : inconnu
-- Agent utilisé : Codex / Claude / autre / inconnu
+- Niveau actuel : à confirmer
+- Style d'explication préféré : à confirmer
+- Système local : à confirmer
+- Agent utilisé : à confirmer
+
+Options possibles pour le niveau : débutant, curieux technique, dev.
+Options possibles pour l'agent : Codex, Claude, autre.
 
 ## Objectif principal
 
@@ -32,11 +35,13 @@ Blocage principal:
 
 ## Chemin choisi
 
-- Chemin : local seulement / VPS / serveur maison / serveur existant / inconnu
-- Fournisseur ou machine : inconnu
-- OS serveur : inconnu
+- Chemin : à confirmer
+- Fournisseur ou machine : à confirmer
+- OS serveur : à confirmer
 - Accès SSH validé : non
 - Alias SSH : aucun
+
+Options possibles pour le chemin : local seulement, VPS, serveur maison, serveur existant.
 
 ## Décisions actives
 

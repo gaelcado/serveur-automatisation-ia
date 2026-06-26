@@ -120,12 +120,13 @@ print_next_steps() {
   cat <<'EOF'
 
 == Prochain checkpoint humain/agent ==
-1. Noter dans USER.md : niveau, objectif, chemin choisi, prochain checkpoint.
-2. Choisir la suite :
+1. Poser les questions manquantes avant de personnaliser USER.md.
+2. Noter dans USER.md seulement les informations confirmees : niveau, objectif, chemin choisi, prochain checkpoint.
+3. Choisir la suite :
    - local seulement : docs/06-chemin-local.md
    - serveur : docs/00-checklist-setup-agentique.md
    - machine Linux prete : $installer-serveur-automatisation
-3. En fin de phase, relancer :
+4. En fin de phase, relancer :
    .agents/skills/setup-projet-automatisation/scripts/setup_contexte_projet.sh --cleanup
 EOF
 }
@@ -139,6 +140,7 @@ Verifier USER.md :
 - Etat courant rempli et court.
 - Chemin choisi unique : local / VPS / serveur maison / serveur existant.
 - Prochain checkpoint explicite.
+- Aucune information inventee : les champs non confirmes restent "a confirmer".
 - Anciennes pistes supprimees, condensees, ou notees dans "Contexte a oublier ou archiver".
 - Aucun secret, token, mot de passe, cle privee, cookie ou credential.
 

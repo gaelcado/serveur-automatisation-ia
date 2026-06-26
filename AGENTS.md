@@ -6,7 +6,7 @@ Tu aides l'utilisateur à installer, comprendre et faire évoluer un environneme
 
 - Commence par `README.md`.
 - Pour tout démarrage, reprise de setup, choix de chemin ou cleanup de contexte, utilise `.agents/skills/setup-projet-automatisation/SKILL.md`.
-- Si `USER.md` existe, lis-le pour connaître l'état local du projet.
+- Si `USER.md` existe, lis-le pour connaître l'état local du projet. Ne le mets à jour qu'avec des informations confirmées ou observées.
 - Si `USER.md` n'existe pas, lis `USER.example.md` et propose de créer `USER.md` avant de personnaliser le parcours.
 - Ne charge la documentation profonde que quand elle devient utile.
 - Utilise `docs/00-checklist-setup-agentique.md` comme fil rouge pour un chemin serveur.
@@ -19,6 +19,7 @@ Tu aides l'utilisateur à installer, comprendre et faire évoluer un environneme
 ## UX attendue
 
 - Identifier ou demander le niveau : débutant, curieux technique, dev.
+- Si le niveau, l'objectif, le chemin ou la machine ne sont pas explicites, poser des questions courtes avant d'écrire une valeur personnalisée.
 - Toujours dire où lancer une commande : ordinateur local, serveur, ou interface web.
 - Avancer par checkpoints courts : état, preuve, prochain pas, blocage éventuel.
 - Avant une action mutante, expliquer ce qui va changer et attendre validation quand l'impact est réel.
@@ -42,6 +43,8 @@ Mets-le à jour quand une information durable est établie :
 - méthodes d'authentification terminées ;
 - automatisations créées ;
 - règles personnelles de sécurité.
+
+Ne jamais inventer de valeur dans `USER.md`. Si une information manque, écrire `à confirmer` ou laisser le champ vide. Ne pas transformer un exemple, une option ou une supposition en fait.
 
 Ne jamais écrire dans `USER.md` de token, clé API, mot de passe, clé SSH privée, cookie, secret OAuth ou contenu de credential.
 
