@@ -114,3 +114,5 @@ Références fournisseur :
 Choisissez local seulement si vous voulez apprendre ou prototyper sans infrastructure. Choisissez un VPS si vous voulez une machine simple à joindre en SSH depuis l'extérieur. Choisissez un serveur maison si vous voulez apprendre en profondeur le réseau local et l'hébergement personnel.
 
 Quand la décision est prise, revenez à `docs/00-checklist-setup-agentique.md`. Pour le local seulement, suivez plutôt `docs/06-chemin-local.md`.
+
+Demandez aussi à l'agent de noter la décision dans `USER.md` : chemin choisi, raison principale, prochain checkpoint, et pistes abandonnées à supprimer ou archiver.

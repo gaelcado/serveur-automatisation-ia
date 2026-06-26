@@ -21,7 +21,7 @@ Commence par comprendre mon objectif, mon niveau, et mon point de départ : loca
 
 Guide-moi étape par étape. Dis toujours où lancer les commandes : ordinateur local ou serveur. Ne me demande jamais de coller un secret dans le chat.
 
-Mets à jour USER.md quand une décision durable est prise : niveau, machine choisie, accès validé, services installés, automatisations créées, limites à respecter.
+Si USER.md n'existe pas, crée-le depuis USER.example.md. Mets-le ensuite à jour quand une décision durable est prise : niveau, machine choisie, accès validé, services installés, automatisations créées, limites à respecter. Nettoie aussi l'ancien contexte quand il devient faux ou inutile.
 ```
 
 Si vous préparez une automatisation importante, demandez d'abord à votre agent de passer en mode planification. Vous pouvez aussi lui demander d'utiliser la skill `grill-me` pour challenger le brief avant de construire.
@@ -40,17 +40,18 @@ Pour choisir, commencez par [docs/01-choisir-son-serveur.md](docs/01-choisir-son
 ## Parcours recommandé
 
 1. Lire cette page.
-2. Remplir ou laisser l'agent remplir [USER.md](USER.md) progressivement.
+2. Créer un carnet local depuis [USER.example.md](USER.example.md), ou laisser l'agent créer `USER.md` progressivement.
 3. Suivre [docs/00-checklist-setup-agentique.md](docs/00-checklist-setup-agentique.md) si vous partez vers un serveur.
 4. Utiliser [docs/06-chemin-local.md](docs/06-chemin-local.md) si vous restez en local.
 5. Installer ou diagnostiquer avec la skill `installer-serveur-automatisation` quand une machine Linux est prête.
 6. Créer une première automatisation minimale avec [docs/05-creer-des-automatisations.md](docs/05-creer-des-automatisations.md).
+7. Nettoyer régulièrement le contexte avec [docs/07-cycle-de-vie-du-contexte.md](docs/07-cycle-de-vie-du-contexte.md).
 
 Le vocabulaire technique est expliqué dans [docs/glossaire.md](docs/glossaire.md).
 
 ## Ce que le dépôt garde en mémoire
 
-`USER.md` est le carnet de bord local du projet. Il peut être modifié par vous ou par l'agent pour noter :
+`USER.md` est le carnet de bord local du projet. Il est créé depuis `USER.example.md` et ignoré par git. Il peut être modifié par vous ou par l'agent pour noter :
 
 - votre niveau et vos préférences d'explication ;
 - le chemin choisi : local, VPS, serveur maison ou serveur existant ;
@@ -61,6 +62,8 @@ Le vocabulaire technique est expliqué dans [docs/glossaire.md](docs/glossaire.m
 - les règles personnelles de sécurité.
 
 N'y mettez jamais de clé API, token, mot de passe, clé SSH privée, secret OAuth ou cookie de session.
+
+Quand une piste devient obsolète, l'agent doit la supprimer, la condenser ou l'archiver localement au lieu de laisser plusieurs versions contradictoires dans le carnet.
 
 ## Règles de sécurité
 
@@ -78,4 +81,5 @@ N'y mettez jamais de clé API, token, mot de passe, clé SSH privée, secret OAu
 - [Secrets et authentification](docs/04-secrets-authentification.md)
 - [Créer des automatisations](docs/05-creer-des-automatisations.md)
 - [Chemin local sans serveur](docs/06-chemin-local.md)
+- [Cycle de vie du contexte](docs/07-cycle-de-vie-du-contexte.md)
 - [Glossaire](docs/glossaire.md)

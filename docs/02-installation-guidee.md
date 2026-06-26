@@ -4,6 +4,14 @@ Cette installation vise un serveur Ubuntu/Debian que vous contrôlez. Les script
 
 Le mode recommandé est agent-led : l'agent lit la checklist, vous indique où lancer chaque commande, puis résume les preuves avant de continuer.
 
+Avant de commencer, créer le carnet local si besoin :
+
+```bash
+cp USER.example.md USER.md
+```
+
+À lancer dans le dépôt où l'agent travaille. `USER.md` est ignoré par git et doit rester sans secret.
+
 ## 1. Connexion
 
 À lancer sur votre ordinateur local :

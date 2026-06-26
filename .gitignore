@@ -2,6 +2,9 @@
 .env
 .env.*
 !.env.example
+USER.md
+.context-local/
+.sessions-local/
 *.pem
 *.key
 *.p12

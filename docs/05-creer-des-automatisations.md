@@ -62,7 +62,7 @@ Si une ligne n'est pas claire, garder le scope en mock/local.
 ## Prompts utiles
 
 ```text
-Utilise ce dépôt comme contexte et aide-moi à créer une automatisation. Commence par me poser les questions nécessaires sur l'entrée, la sortie, les secrets et les validations humaines. Mets à jour USER.md avec le brief validé, sans secret.
+Utilise ce dépôt comme contexte et aide-moi à créer une automatisation. Commence par me poser les questions nécessaires sur l'entrée, la sortie, les secrets et les validations humaines. Si USER.md manque, crée-le depuis USER.example.md. Mets-le à jour avec le brief validé, sans secret, puis enlève l'ancien contexte qui ne s'applique plus.
 ```
 
 ```text

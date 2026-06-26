@@ -4,10 +4,13 @@ Tu aides l'utilisateur à installer, comprendre et faire évoluer un environneme
 
 ## Principe de travail
 
-- Commence par `README.md`, puis lis `USER.md` pour connaître l'état local du projet.
+- Commence par `README.md`.
+- Si `USER.md` existe, lis-le pour connaître l'état local du projet.
+- Si `USER.md` n'existe pas, lis `USER.example.md` et propose de créer `USER.md` avant de personnaliser le parcours.
 - Ne charge la documentation profonde que quand elle devient utile.
 - Utilise `docs/00-checklist-setup-agentique.md` comme fil rouge pour un chemin serveur.
 - Utilise `docs/06-chemin-local.md` si l'utilisateur veut rester en local sans serveur ni automatisations asynchrones.
+- Utilise `docs/07-cycle-de-vie-du-contexte.md` quand le contexte local doit être créé, condensé, nettoyé ou archivé.
 - Utilise `docs/glossaire.md` pour traduire les termes techniques au bon niveau.
 - Si la tâche touche une installation serveur, lis `.agents/skills/installer-serveur-automatisation/SKILL.md`.
 
@@ -22,7 +25,13 @@ Tu aides l'utilisateur à installer, comprendre et faire évoluer un environneme
 
 ## Mémoire évolutive
 
-`USER.md` est le carnet de bord. Mets-le à jour quand une information durable est établie :
+`USER.md` est le carnet de bord local et ignoré par git. S'il manque, proposer :
+
+```bash
+cp USER.example.md USER.md
+```
+
+Mets-le à jour quand une information durable est établie :
 
 - niveau et préférences d'explication ;
 - chemin choisi : local, VPS, serveur maison, serveur existant ;
@@ -34,7 +43,9 @@ Tu aides l'utilisateur à installer, comprendre et faire évoluer un environneme
 
 Ne jamais écrire dans `USER.md` de token, clé API, mot de passe, clé SSH privée, cookie, secret OAuth ou contenu de credential.
 
-Avant tout commit, relire `USER.md` : il doit rester publiable ou être volontairement exclu du commit si l'utilisateur y a mis du contexte personnel.
+À la fin d'une phase, condenser `USER.md` autour de l'état actuel : état, preuve, décision durable, prochain pas, ancien contexte à oublier. Supprimer ou archiver localement les pistes qui ne sont plus vraies.
+
+Avant tout commit, vérifier que `USER.md`, `.context-local/` et `.sessions-local/` ne sont pas suivis par git.
 
 ## Sécurité
 
@@ -86,6 +97,5 @@ python3 "${HOME}/.codex/skills/.system/skill-creator/scripts/quick_validate.py" 
 bash -n .agents/skills/installer-serveur-automatisation/scripts/diagnostic_serveur.sh
 bash -n .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh
 .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --plan --target auto
-git diff -- USER.md
-git status
+git status --short
 ```

@@ -1,10 +1,21 @@
-# USER - contexte vivant
+# USER - contexte vivant local
 
-Ce fichier est le carnet de bord du dépôt. Il aide l'agent à personnaliser l'accompagnement sans redemander les mêmes informations.
+Ce fichier est un modèle. Copiez-le en `USER.md` ou demandez à votre agent de le faire.
 
-Il peut évoluer pendant l'installation et pendant la création des automatisations. Gardez-le factuel, court et utile.
+`USER.md` est ignoré par git : il sert de carnet de bord local et personnel. Il aide l'agent à personnaliser l'accompagnement sans redemander les mêmes informations.
 
-Avant de publier ou pousser le dépôt, relisez ce fichier. Il doit rester partageable publiquement.
+Gardez-le factuel, court et utile. Ne mettez jamais de secret dedans.
+
+## État courant
+
+Cette section doit rester courte. Elle remplace les anciens états quand le projet avance.
+
+```text
+Dernière mise à jour:
+Phase actuelle:
+Prochain checkpoint:
+Blocage principal:
+```
 
 ## Profil
 
@@ -26,6 +37,17 @@ Avant de publier ou pousser le dépôt, relisez ce fichier. Il doit rester parta
 - OS serveur : inconnu
 - Accès SSH validé : non
 - Alias SSH : aucun
+
+## Décisions actives
+
+Ne garder ici que les décisions encore vraies.
+
+```text
+Décision:
+Raison:
+Preuve:
+Date:
+```
 
 ## Services et outils
 
@@ -68,6 +90,16 @@ Secrets nécessaires:
 Statut:
 ```
 
+## Contexte à oublier ou archiver
+
+Utilisez cette section quand une ancienne piste est abandonnée. L'agent doit ensuite enlever ou condenser ce contexte dans les sections actives.
+
+```text
+Élément obsolète:
+Pourquoi:
+Action: supprimer / condenser / garder en archive locale
+```
+
 ## Règles personnelles
 
 ```text
@@ -78,6 +110,8 @@ Niveau d'autonomie autorisé à l'agent:
 ```
 
 ## Journal de décisions
+
+Ce journal doit rester condensé. Quand il devient long, demander à l'agent de le résumer en décisions actives et d'archiver le détail dans un fichier local ignoré.
 
 ```text
 AAAA-MM-JJ - Décision - Preuve ou raison

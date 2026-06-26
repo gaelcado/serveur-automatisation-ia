@@ -11,7 +11,9 @@ Si l'utilisateur ne veut pas de serveur ni d'automatisation asynchrone pour l'in
 - Ne jamais demander de secret dans le chat.
 - Avancer par checkpoints.
 - Produire après chaque phase un résumé : état, preuve, prochain pas.
+- Créer `USER.md` depuis `USER.example.md` si le carnet local n'existe pas.
 - Mettre à jour `USER.md` après une décision durable ou une preuve validée, sans secret.
+- Nettoyer le vieux contexte avec `docs/07-cycle-de-vie-du-contexte.md` quand une hypothèse devient fausse.
 - Utiliser `docs/glossaire.md` dès qu'un terme bloque.
 
 ## Phase 0 - Point de départ local
@@ -24,7 +26,7 @@ Objectif : savoir d'où part l'utilisateur.
 - Il sait ouvrir un terminal local, ou l'agent peut l'aider depuis l'app.
 - Il a un objectif d'automatisation, même vague.
 - Il connaît son niveau approximatif : débutant, curieux technique, dev.
-- `USER.md` existe et peut servir de carnet de bord.
+- `USER.md` existe ou peut être créé depuis `USER.example.md`.
 
 Questions utiles :
 
@@ -40,6 +42,14 @@ Objectif:
 Chemin: local seulement / VPS / serveur maison / serveur existant
 Blocage principal: ...
 ```
+
+Si `USER.md` manque :
+
+```bash
+cp USER.example.md USER.md
+```
+
+À lancer dans le dépôt où l'agent travaille.
 
 ## Phase 1 - Choisir le chemin
 
@@ -307,3 +317,10 @@ Agent distant prêt: oui/non
 Première automatisation mock: oui/non
 Prochaine vraie intégration: ...
 ```
+
+Fin de parcours :
+
+- condenser `USER.md` autour de l'état actuel ;
+- supprimer les hypothèses fausses ou chemins abandonnés ;
+- archiver le détail localement seulement si utile ;
+- lire `docs/07-cycle-de-vie-du-contexte.md` avant de continuer vers plusieurs automatisations.

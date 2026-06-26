@@ -11,7 +11,7 @@ Utiliser ce skill pour guider l'utilisateur vers le bon environnement d'automati
 
 1. Identifier le contexte : local seulement, pas de serveur, VPS à créer, serveur maison, serveur existant, SSH cassé, OS, droits sudo.
 2. Identifier le niveau utilisateur : débutant, curieux technique, dev. Adapter la densité des explications.
-3. Lire `USER.md` à la racine du dépôt si présent, puis proposer de le mettre à jour après les décisions durables.
+3. Lire `USER.md` à la racine du dépôt si présent. S'il manque, lire `USER.example.md` et proposer de créer `USER.md` avec `cp USER.example.md USER.md`.
 4. Si l'utilisateur veut rester en local sans serveur ni automatisation asynchrone, lire `docs/06-chemin-local.md` à la racine du dépôt et ne pas forcer l'installation serveur.
 5. Si l'utilisateur n'a pas encore de serveur ou de bridge SSH fiable, lire `docs/00-checklist-setup-agentique.md` à la racine du dépôt et suivre ses phases.
 6. Lire `references/chemins-serveur.md` si le choix VPS/serveur maison est encore flou.
@@ -36,7 +36,7 @@ Utiliser ce skill pour guider l'utilisateur vers le bon environnement d'automati
 
 11. Guider les authentifications hors chat : navigateur local, device-code, CLI officiel ou n8n via tunnel SSH.
 12. Relancer le diagnostic, vérifier n8n local-only, puis proposer les chemins Codex et Claude adaptés.
-13. Mettre à jour `USER.md` avec les statuts, sans secret.
+13. Mettre à jour `USER.md` avec les statuts, sans secret, puis supprimer ou condenser les hypothèses obsolètes.
 
 Après chaque grande étape, rendre un résumé :
 
@@ -82,7 +82,9 @@ Ne traiter ni Codex ni Claude comme simple bonus. Choisir le chemin selon la mac
 
 - `../../../docs/00-checklist-setup-agentique.md` : parcours complet quand il manque le serveur ou le bridge.
 - `../../../docs/06-chemin-local.md` : parcours local quand l'utilisateur ne veut pas de serveur.
-- `../../../USER.md` : carnet de bord à lire et mettre à jour sans secrets.
+- `../../../docs/07-cycle-de-vie-du-contexte.md` : création, mise à jour, condensation et pruning du contexte local.
+- `../../../USER.example.md` : modèle de carnet local quand `USER.md` n'existe pas.
+- `../../../USER.md` : carnet de bord local à lire et mettre à jour sans secrets, s'il existe.
 - `../../../docs/glossaire.md` : définitions françaises pour vulgariser sans perdre la précision.
 - `references/chemins-serveur.md` : choisir et expliquer VPS France, serveur maison, Hostinger, OVHcloud.
 - `references/authentification.md` : SSH, GitHub, OpenAI/Codex, Claude, n8n, OAuth et secrets.

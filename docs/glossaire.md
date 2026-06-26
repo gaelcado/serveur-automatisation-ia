@@ -142,7 +142,11 @@ Ce glossaire donne des définitions courtes. L'agent doit y renvoyer quand un mo
 
 **CLAUDE.md** : fichier de contexte utilisé par Claude Code. Ici, c'est un lien vers `AGENTS.md` pour éviter deux versions divergentes.
 
-**USER.md** : carnet de bord évolutif du projet. Il décrit le niveau, les machines, les services, les automatisations et les règles personnelles, sans secret.
+**USER.example.md** : modèle versionné du carnet de bord utilisateur. Il sert à créer un `USER.md` local sans partir d'une page vide.
+
+**USER.md** : carnet de bord local du projet, créé depuis `USER.example.md` et ignoré par git. Il décrit le niveau, les machines, les services, les automatisations et les règles personnelles, sans secret.
+
+**Cycle de vie du contexte** : règle de maintenance qui dit quand enrichir, condenser, archiver ou supprimer du contexte pour éviter les contradictions.
 
 **.agents/skills** : emplacement principal des skills maintenues dans ce dépôt.
 

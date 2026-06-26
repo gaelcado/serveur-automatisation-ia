@@ -1,4 +1,4 @@
 interface:
   display_name: "Installer l'automatisation IA"
-  short_description: "Guider local, serveur, SSH, agents et n8n"
-  default_prompt: "Use $installer-serveur-automatisation to choose local or server setup, then guide SSH, n8n, Codex, Claude and safe authentication."
+  short_description: "Guider local, serveur, SSH, contexte, agents et n8n"
+  default_prompt: "Utilise $installer-serveur-automatisation pour choisir le chemin local ou serveur, créer le contexte local, puis guider SSH, n8n, Codex, Claude et les authentifications sûres."
