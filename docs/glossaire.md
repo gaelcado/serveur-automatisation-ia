@@ -138,6 +138,12 @@ Ce glossaire donne des définitions courtes. L'agent doit y renvoyer quand un mo
 
 **Context repo** : dépôt qui contient les règles, docs et scripts dont l'agent a besoin pour agir correctement.
 
-**AGENTS.md** : fichier d'instructions durable que l'agent lit pour comprendre les règles du projet.
+**AGENTS.md** : fichier d'instructions durable injecté par Codex et d'autres harnesses compatibles pour comprendre les règles du projet.
 
-**CLAUDE.md** : équivalent utilisé par Claude Code. Ici, c'est un lien vers `AGENTS.md`.
+**CLAUDE.md** : fichier de contexte utilisé par Claude Code. Ici, c'est un lien vers `AGENTS.md` pour éviter deux versions divergentes.
+
+**USER.md** : carnet de bord évolutif du projet. Il décrit le niveau, les machines, les services, les automatisations et les règles personnelles, sans secret.
+
+**.agents/skills** : emplacement principal des skills maintenues dans ce dépôt.
+
+**.claude/skills** : emplacement projet lu par Claude Code pour les skills. Ici, c'est un lien vers `.agents/skills`.

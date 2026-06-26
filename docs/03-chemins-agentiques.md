@@ -39,6 +39,10 @@ Remote Control permet de suivre et piloter des sessions Claude Code depuis le we
 
 Référence : https://docs.anthropic.com/en/docs/claude-code/remote-control
 
+Claude Code lit aussi des skills de projet dans `.claude/skills/<nom>/SKILL.md`. Dans ce dépôt, `.claude/skills` est un lien vers `.agents/skills` pour garder une seule source de vérité.
+
+Référence skills : https://docs.anthropic.com/en/docs/claude-code/skills
+
 Checklist Claude :
 
 ```text

@@ -2,6 +2,8 @@
 
 Cette checklist est le fil rouge pour l'agent. Elle suppose que l'utilisateur a une app locale comme Codex ou Claude, mais pas forcément un serveur, SSH ou n8n.
 
+Si l'utilisateur ne veut pas de serveur ni d'automatisation asynchrone pour l'instant, bifurquer vers `docs/06-chemin-local.md`.
+
 ## Mode d'emploi pour l'agent
 
 - Identifier le niveau utilisateur : débutant, curieux technique, dev.
@@ -9,6 +11,7 @@ Cette checklist est le fil rouge pour l'agent. Elle suppose que l'utilisateur a 
 - Ne jamais demander de secret dans le chat.
 - Avancer par checkpoints.
 - Produire après chaque phase un résumé : état, preuve, prochain pas.
+- Mettre à jour `USER.md` après une décision durable ou une preuve validée, sans secret.
 - Utiliser `docs/glossaire.md` dès qu'un terme bloque.
 
 ## Phase 0 - Point de départ local
@@ -21,42 +24,49 @@ Objectif : savoir d'où part l'utilisateur.
 - Il sait ouvrir un terminal local, ou l'agent peut l'aider depuis l'app.
 - Il a un objectif d'automatisation, même vague.
 - Il connaît son niveau approximatif : débutant, curieux technique, dev.
+- `USER.md` existe et peut servir de carnet de bord.
 
 Questions utiles :
 
 - Quel est le premier résultat utile que vous voulez obtenir ?
 - Avez-vous déjà un serveur, une adresse IP ou un accès SSH ?
-- Voulez-vous plutôt louer un VPS ou utiliser une machine chez vous ?
+- Voulez-vous rester en local pour commencer, louer un VPS, utiliser une machine chez vous, ou partir d'un serveur existant ?
 
 Checkpoint :
 
 ```text
-Niveau: ...
-Objectif: ...
-Chemin: VPS / serveur maison / serveur existant
+Niveau:
+Objectif:
+Chemin: local seulement / VPS / serveur maison / serveur existant
 Blocage principal: ...
 ```
 
-## Phase 1 - Choisir le type de serveur
+## Phase 1 - Choisir le chemin
 
 Objectif : choisir sans noyer l'utilisateur.
 
 Chemins :
 
+- **Local seulement** : recommandé si l'utilisateur veut apprendre, prototyper, manipuler des fichiers locaux ou lancer l'automatisation à la main.
 - **VPS** : recommandé si l'utilisateur veut avancer vite avec une machine accessible en SSH depuis l'extérieur.
 - **Serveur maison** : recommandé si l'utilisateur veut apprendre l'infrastructure personnelle ou utiliser une machine déjà disponible.
 - **Serveur existant** : recommandé si l'utilisateur a déjà une machine Linux accessible.
 
-Lire : `docs/01-choisir-son-serveur.md`.
+Lire :
+
+- `docs/06-chemin-local.md` si le chemin local suffit.
+- `docs/01-choisir-son-serveur.md` si une machine distante ou maison est nécessaire.
 
 Checkpoint :
 
 ```text
-Type de serveur choisi: ...
+Chemin choisi: ...
 Fournisseur ou machine: ...
 OS prévu: Ubuntu/Debian/autre
 Accès admin/sudo: oui/non/inconnu
 ```
+
+Si le chemin choisi est **local seulement**, ne pas continuer vers les phases SSH/serveur. Utiliser `docs/06-chemin-local.md`, puis créer une première automatisation locale ou mock.
 
 ## Phase 2 - Créer ou identifier le serveur
 

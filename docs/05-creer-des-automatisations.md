@@ -1,6 +1,6 @@
 # 05 - Créer des automatisations
 
-Une fois le serveur prêt, utilisez ce dépôt comme contexte pour demander à votre agent de construire des automatisations.
+Une fois le chemin choisi, local ou serveur, utilisez ce dépôt comme contexte pour demander à votre agent de construire des automatisations.
 
 La première version doit fonctionner avec données fictives ou locales. Les vrais comptes viennent après.
 
@@ -62,7 +62,7 @@ Si une ligne n'est pas claire, garder le scope en mock/local.
 ## Prompts utiles
 
 ```text
-Lis AGENTS.md puis aide-moi à créer une automatisation. Commence par me poser les questions nécessaires sur l'entrée, la sortie, les secrets et les validations humaines.
+Utilise ce dépôt comme contexte et aide-moi à créer une automatisation. Commence par me poser les questions nécessaires sur l'entrée, la sortie, les secrets et les validations humaines. Mets à jour USER.md avec le brief validé, sans secret.
 ```
 
 ```text

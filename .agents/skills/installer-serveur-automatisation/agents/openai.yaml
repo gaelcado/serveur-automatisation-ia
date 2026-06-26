@@ -1,4 +1,4 @@
 interface:
-  display_name: "Installer un serveur d'automatisation"
-  short_description: "Guider serveur, SSH, Codex, Claude et n8n"
-  default_prompt: "Use $installer-serveur-automatisation to guide my server setup from no SSH bridge to a working n8n/Codex/Claude automation server."
+  display_name: "Installer l'automatisation IA"
+  short_description: "Guider local, serveur, SSH, agents et n8n"
+  default_prompt: "Use $installer-serveur-automatisation to choose local or server setup, then guide SSH, n8n, Codex, Claude and safe authentication."

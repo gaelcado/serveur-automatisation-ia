@@ -9,6 +9,7 @@ Les skills de ce dossier sont embarqués dans un dépôt public pour utilisateur
 - Garder le code déterministe dans `scripts/`.
 - Mettre à jour `agents/openai.yaml` quand le rôle du skill change.
 - Nommer les nouvelles skills en minuscules avec tirets, même si les contenus sont en français.
+- Garder `.agents/skills` comme source de vérité. `.claude/skills` doit rester un lien vers ce dossier pour Claude Code.
 
 ## Découverte progressive
 

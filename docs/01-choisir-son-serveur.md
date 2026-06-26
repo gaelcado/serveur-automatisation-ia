@@ -1,22 +1,35 @@
 # 01 - Choisir son serveur
 
-Vous avez besoin d'une machine qui reste disponible pendant vos automatisations. Deux chemins sont possibles : louer un VPS ou utiliser un serveur maison.
+Vous avez besoin d'une machine qui reste disponible pendant vos automatisations seulement si elles doivent tourner sans vous, recevoir des webhooks ou rester accessibles à distance.
 
-Si vous n'avez encore rien, ne commencez pas par installer n8n. Commencez par choisir le type de machine. Le reste dépend de cette décision.
+Si vous n'avez encore rien, ne commencez pas par installer n8n. Commencez par choisir le type de chemin. Le reste dépend de cette décision.
 
 ## Choix rapide avec l'agent
 
 Demandez à votre agent :
 
 ```text
-Aide-moi à choisir entre VPS, serveur maison ou serveur déjà existant. Pose-moi seulement les questions nécessaires : budget, matériel disponible, besoin d'accès depuis l'extérieur, niveau réseau, et objectif d'automatisation.
+Aide-moi à choisir entre local seulement, VPS, serveur maison ou serveur déjà existant. Pose-moi seulement les questions nécessaires : budget, matériel disponible, besoin d'accès depuis l'extérieur, besoin d'automatisation continue, niveau réseau, et objectif d'automatisation.
 ```
 
 Repère par niveau :
 
-- **Débutant** : choisir un VPS Ubuntu LTS est souvent le chemin le plus court.
+- **Débutant** : local seulement pour apprendre, puis VPS Ubuntu LTS si une machine continue devient utile.
 - **Curieux technique** : serveur maison ou VPS conviennent ; choisissez selon ce que vous voulez apprendre.
 - **Dev** : choisissez selon les contraintes réseau, sécurité, coût et disponibilité.
+
+## Chemin 0 : local seulement
+
+Le chemin local est le plus simple si vous voulez apprendre, manipuler des fichiers, tester un prompt, ou lancer une automatisation à la main.
+
+Choisissez local seulement si :
+
+- vous n'avez pas besoin de webhook public ;
+- votre ordinateur peut rester ouvert pendant l'action ;
+- vous acceptez de lancer les workflows manuellement ;
+- vous voulez éviter SSH, firewall, DNS, NAT et services systemd au départ.
+
+Lire : `docs/06-chemin-local.md`.
 
 ## Chemin A : VPS
 
@@ -98,6 +111,6 @@ Références fournisseur :
 
 ## Décision rapide
 
-Choisissez un VPS si vous voulez une machine simple à joindre en SSH depuis l'extérieur. Choisissez un serveur maison si vous voulez apprendre en profondeur le réseau local et l'hébergement personnel.
+Choisissez local seulement si vous voulez apprendre ou prototyper sans infrastructure. Choisissez un VPS si vous voulez une machine simple à joindre en SSH depuis l'extérieur. Choisissez un serveur maison si vous voulez apprendre en profondeur le réseau local et l'hébergement personnel.
 
-Quand la décision est prise, revenez à `docs/00-checklist-setup-agentique.md`, phase 2.
+Quand la décision est prise, revenez à `docs/00-checklist-setup-agentique.md`. Pour le local seulement, suivez plutôt `docs/06-chemin-local.md`.
