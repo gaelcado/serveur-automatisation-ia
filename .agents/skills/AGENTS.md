@@ -18,7 +18,8 @@ Chaque skill doit :
 2. Indiquer quelles références lire selon le besoin.
 3. Éviter de charger tous les détails d'un coup.
 4. Distinguer clairement diagnostic, plan et exécution.
+5. Adapter les explications aux niveaux débutant, curieux technique et dev quand la skill guide un humain.
 
 ## Langue
 
-Écrire les instructions utilisateur en français. Conserver les noms de commandes et de produits en anglais lorsqu'ils sont officiels.
+Écrire les instructions utilisateur en français. Conserver les noms de commandes et de produits en anglais lorsqu'ils sont officiels. Dire explicitement si une commande se lance sur l'ordinateur local ou sur le serveur.

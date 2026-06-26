@@ -1,6 +1,6 @@
 ---
 name: installer-serveur-automatisation
-description: Diagnostiquer, installer et expliquer un serveur d'automatisation IA pour débutants, sur VPS Ubuntu/Debian ou serveur maison Linux. Utiliser quand Codex doit guider SSH, Git, GitHub CLI, Node/nvm, n8n, Codex CLI, Claude Code, services systemd, tunnels SSH, authentifications sûres, accès distant via app/CLI, ou création d'automatisations agentiques avec n8n, scripts et validations humaines.
+description: Diagnostiquer, installer et expliquer un serveur d'automatisation IA pour débutants, sur VPS Ubuntu/Debian ou serveur maison Linux. Utiliser quand Codex doit guider un utilisateur sans serveur prêt, sans bridge SSH, ou avec une machine à configurer pour SSH, Git, GitHub CLI, Node/nvm, n8n, Codex CLI, Claude Code, services systemd, tunnels SSH, authentifications sûres, accès distant via app/CLI, ou création d'automatisations agentiques avec n8n, scripts et validations humaines.
 ---
 
 # Installer un serveur d'automatisation
@@ -9,29 +9,40 @@ Utiliser ce skill pour transformer une machine Linux contrôlée par l'utilisate
 
 ## Workflow par défaut
 
-1. Identifier le contexte : VPS, serveur maison, machine de développement distante, niveau SSH, OS, droits sudo.
-2. Lire `references/chemins-serveur.md` si le choix VPS/serveur maison est encore flou.
-3. Lancer le diagnostic :
+1. Identifier le contexte : pas de serveur, VPS à créer, serveur maison, serveur existant, SSH cassé, OS, droits sudo.
+2. Identifier le niveau utilisateur : débutant, curieux technique, dev. Adapter la densité des explications.
+3. Si l'utilisateur n'a pas encore de serveur ou de bridge SSH fiable, lire `docs/00-checklist-setup-agentique.md` à la racine du dépôt et suivre ses phases.
+4. Lire `references/chemins-serveur.md` si le choix VPS/serveur maison est encore flou.
+5. Une fois dans le dépôt sur le serveur, lancer le diagnostic :
 
    ```bash
    .agents/skills/installer-serveur-automatisation/scripts/diagnostic_serveur.sh
    ```
 
-4. Préparer un plan sans mutation :
+6. Préparer un plan sans mutation :
 
    ```bash
    .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --plan --target auto
    ```
 
-5. Expliquer les actions prévues en langage simple avant tout `--apply`.
-6. Installer si l'utilisateur confirme :
+7. Expliquer les actions prévues en langage simple avant tout `--apply`.
+8. Installer si l'utilisateur confirme :
 
    ```bash
    .agents/skills/installer-serveur-automatisation/scripts/installer_serveur_automatisation.sh --apply --target auto
    ```
 
-7. Guider les authentifications hors chat : navigateur local, device-code, CLI officiel ou n8n via tunnel SSH.
-8. Relancer le diagnostic, vérifier n8n local-only, puis proposer les chemins Codex et Claude adaptés.
+9. Guider les authentifications hors chat : navigateur local, device-code, CLI officiel ou n8n via tunnel SSH.
+10. Relancer le diagnostic, vérifier n8n local-only, puis proposer les chemins Codex et Claude adaptés.
+
+Après chaque grande étape, rendre un résumé :
+
+```text
+État:
+Preuve:
+Prochain pas:
+Blocage éventuel:
+```
 
 ## Cibles
 
@@ -57,8 +68,16 @@ Ne traiter ni Codex ni Claude comme simple bonus. Choisir le chemin selon la mac
 - Installer Claude Code par défaut dans le chemin complet ; utiliser `--no-claude` seulement si l'utilisateur veut l'exclure.
 - Commencer par des données fictives et des credentials de test avant tout compte réel.
 
+## Courbe d'explication
+
+- Débutant : une commande à la fois, dire local ou serveur, définir les mots avec `docs/glossaire.md`.
+- Curieux technique : expliquer le pourquoi et le modèle mental.
+- Dev : donner commandes groupées, préconditions et vérifications.
+
 ## Références à charger au besoin
 
+- `../../../docs/00-checklist-setup-agentique.md` : parcours complet quand il manque le serveur ou le bridge.
+- `../../../docs/glossaire.md` : définitions françaises pour vulgariser sans perdre la précision.
 - `references/chemins-serveur.md` : choisir et expliquer VPS France, serveur maison, Hostinger, OVHcloud.
 - `references/authentification.md` : SSH, GitHub, OpenAI/Codex, Claude, n8n, OAuth et secrets.
 - `references/chemins-agentiques.md` : surfaces Codex et Claude, app/CLI/remote/app-server.

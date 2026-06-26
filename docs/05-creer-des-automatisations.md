@@ -2,6 +2,8 @@
 
 Une fois le serveur prêt, utilisez ce dépôt comme contexte pour demander à votre agent de construire des automatisations.
 
+La première version doit fonctionner avec données fictives ou locales. Les vrais comptes viennent après.
+
 ## Demande minimale utile
 
 Donnez à l'agent :
@@ -26,6 +28,29 @@ Utilise ce dépôt comme contexte. Je veux une automatisation n8n qui lit un fic
 Entrée -> validation -> transformation -> brouillon IA -> revue humaine -> action -> log
 ```
 
+## Mini brief builder
+
+Demandez à l'agent de remplir ceci avec vous avant de créer le workflow :
+
+```text
+Nom de l'automatisation:
+Utilisateur final:
+Déclencheur:
+Données d'entrée:
+Résultat attendu:
+Ce qui doit être déterministe:
+Ce que l'IA peut faire:
+Action externe autorisée:
+Validation humaine:
+Secrets nécessaires:
+Mode test/mock:
+Logs ou historique:
+Fréquence:
+Critère de succès:
+```
+
+Si une ligne n'est pas claire, garder le scope en mock/local.
+
 ## Où mettre quoi
 
 - n8n : déclencheurs, orchestration, credentials, appels entre services.
@@ -46,4 +71,8 @@ Diagnostique ce serveur avec la skill installer-serveur-automatisation, puis pro
 
 ```text
 Transforme cette idée en workflow n8n + script déterministe. Ne crée pas de credentials réels et ne demande aucun secret dans le chat.
+```
+
+```text
+Utilise le mini brief builder de docs/05-creer-des-automatisations.md. Si je propose une action risquée, remplace-la par une étape de validation humaine.
 ```

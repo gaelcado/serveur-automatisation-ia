@@ -2,6 +2,8 @@
 
 Tu aides l'utilisateur à transformer une machine Linux qu'il contrôle en serveur d'automatisation IA. Ce dépôt est un contexte vivant pour diagnostiquer, installer, configurer et faire évoluer le serveur avec l'agent choisi par l'utilisateur.
 
+Le chemin principal est `docs/00-checklist-setup-agentique.md`. Utilise-le comme fil rouge dès que l'utilisateur part sans serveur, sans SSH fiable, sans bridge Codex/Claude, ou sans n8n fonctionnel.
+
 ## Mission
 
 - Rendre le serveur utilisable par un débutant sans masquer les notions importantes.
@@ -10,21 +12,41 @@ Tu aides l'utilisateur à transformer une machine Linux qu'il contrôle en serve
 - Créer ou améliorer des automatisations concrètes à partir des besoins de l'utilisateur.
 - Garder les secrets hors chat et les services sensibles hors Internet public.
 
+## Niveau utilisateur
+
+Commence par estimer ou demander le niveau si ce n'est pas clair :
+
+- **Débutant** : une commande à la fois, expliquer les mots techniques avec `docs/glossaire.md`, vérifier chaque checkpoint.
+- **Curieux technique** : expliquer le pourquoi, montrer la carte mentale, garder les commandes copiables.
+- **Dev** : aller plus vite, mais garder les frontières local/serveur/secrets explicites.
+
+Ne fais pas semblant que tout est simple. Rends le chemin lisible.
+
 ## Découverte progressive
 
 Avancer dans cet ordre :
 
 1. Lire `README.md`.
-2. Identifier la demande : installation, diagnostic, accès distant, authentification, création d'automatisation, dépannage.
-3. Lire le guide pertinent dans `docs/`.
-4. Si la tâche touche au serveur, lire `.agents/skills/installer-serveur-automatisation/SKILL.md`.
-5. Lire seulement les références explicitement utiles dans la skill.
-6. Lancer d'abord un diagnostic ou un plan avant toute action qui modifie la machine.
+2. Lire `docs/00-checklist-setup-agentique.md`.
+3. Identifier la demande : choix serveur, SSH, installation, accès distant, authentification, création d'automatisation, dépannage.
+4. Lire le guide pertinent dans `docs/`.
+5. Si la tâche touche au serveur, lire `.agents/skills/installer-serveur-automatisation/SKILL.md`.
+6. Lire seulement les références explicitement utiles dans la skill.
+7. Lancer d'abord un diagnostic ou un plan avant toute action qui modifie la machine.
+
+## Règles UX/DX
+
+- Toujours dire où lancer chaque commande : **ordinateur local** ou **serveur**.
+- Résumer l'état après chaque étape : fait, bloqué, prochain test, prochaine action.
+- Avant une action mutante, annoncer ce qui va changer et pourquoi.
+- Si un terme technique apparaît, donner une mini-explication ou pointer `docs/glossaire.md`.
+- Si l'utilisateur n'a pas encore de serveur, ne saute pas à l'installation : aider d'abord à choisir VPS, serveur maison ou serveur existant.
+- Si SSH ne marche pas, traiter SSH comme le produit à construire avant n8n ou les agents.
 
 ## Règles d'action
 
 - Toujours distinguer machine locale, serveur distant, VPS, serveur maison et navigateur local.
-- Avant installation, exécuter :
+- Avant installation sur un serveur où le dépôt existe, exécuter :
 
   ```bash
   .agents/skills/installer-serveur-automatisation/scripts/diagnostic_serveur.sh
@@ -46,6 +68,22 @@ Avancer dans cet ordre :
 - Guider l'utilisateur vers son navigateur local, un flux device-code, un CLI officiel ou l'interface n8n ouverte par tunnel SSH.
 - Expliquer où stocker les secrets : gestionnaire de secrets, `.env` non commité, credentials n8n, variables systemd, secrets GitHub Actions.
 - Ne pas exposer n8n publiquement pour résoudre un problème OAuth sans expliquer les risques et les alternatives.
+
+## Automatisations
+
+Avant de construire, extraire un mini brief :
+
+- objectif concret ;
+- source de données ;
+- action attendue ;
+- actions interdites ;
+- services à connecter ;
+- secret déjà configuré ou non ;
+- validation humaine nécessaire ;
+- fréquence ;
+- journalisation attendue.
+
+Si ces éléments manquent, poser les questions minimales puis proposer un prototype local/mock avant les vrais comptes.
 
 ## Vérifications
 

@@ -15,6 +15,16 @@ Codex App peut alors lancer des threads sur le système de fichiers et le shell 
 
 Référence : https://developers.openai.com/codex/remote-connections
 
+Checklist Codex :
+
+```text
+Alias SSH local: ...
+ssh alias fonctionne: oui/non
+codex sur le serveur: oui/non
+codex login fait: oui/non
+projet distant ouvert dans Codex App: oui/non
+```
+
 ## Chemin Claude
 
 Claude Code est aussi un chemin complet. Il peut être utilisé :
@@ -28,6 +38,15 @@ Claude Code est aussi un chemin complet. Il peut être utilisé :
 Remote Control permet de suivre et piloter des sessions Claude Code depuis le web ou mobile, sans rester collé au terminal. Le serveur doit quand même être correctement configuré : projet, permissions, auth, outils, logs et secrets.
 
 Référence : https://docs.anthropic.com/en/docs/claude-code/remote-control
+
+Checklist Claude :
+
+```text
+claude sur le serveur: oui/non
+auth Claude faite: oui/non
+surface choisie: CLI / IDE / Remote Control / Actions
+projet ouvert: oui/non
+```
 
 ## CLI, app ou orchestration ?
 
@@ -50,3 +69,5 @@ n8n orchestre -> script vérifie/transforme -> IA lit/rédige/classe -> humain v
 ```
 
 Utilisez du code quand la répétabilité compte. Utilisez l'IA quand il faut comprendre du langage, synthétiser ou produire un brouillon. Gardez une validation humaine pour argent, envoi externe, santé/sécurité, données confidentielles ou réputation.
+
+Si vous hésitez, demandez à l'agent de choisir la plus petite surface suffisante. Exemple : CLI interactive pour comprendre, n8n pour orchestrer, app distante pour suivre dans le confort.
