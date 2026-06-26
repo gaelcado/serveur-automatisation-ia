@@ -1,0 +1,4 @@
+interface:
+  display_name: "Installer un serveur d'automatisation"
+  short_description: "Installer Codex, n8n et les briques serveur"
+  default_prompt: "Use $installer-serveur-automatisation to diagnose and prepare my automation server."

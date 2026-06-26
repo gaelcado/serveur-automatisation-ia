@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trouver des skills"
+  short_description: "Découvrir des skills utiles"
+  default_prompt: "Utilise $find-skills pour chercher un skill adapté à ce besoin et recommander une option fiable."

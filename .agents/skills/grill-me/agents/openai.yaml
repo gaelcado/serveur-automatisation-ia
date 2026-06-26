@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grill Me"
+  short_description: "Challenger un plan sans détour"
+  default_prompt: "Utilise $grill-me pour challenger ce plan et faire ressortir ses angles morts."

@@ -1,0 +1,32 @@
+# Secrets et environnements locaux
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+auth.json
+ws-token
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Sorties locales
+.cache/
+dist/
+build/
+tmp/
+*.log
+
+# OS / éditeurs
+.DS_Store
+.idea/
+.vscode/
