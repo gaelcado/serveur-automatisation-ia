@@ -92,6 +92,9 @@ Sortie:
 Validation humaine:
 Fréquence:
 Secrets nécessaires:
+Mode test/mock:
+Cas limites:
+Actions interdites:
 Statut:
 ```
 

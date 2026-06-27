@@ -4,6 +4,8 @@ Une fois le chemin choisi, local ou serveur, utilisez ce dépôt comme contexte 
 
 La première version doit fonctionner avec données fictives ou locales. Les vrais comptes viennent après.
 
+Si vous avez une fiche cas d'usage, utilisez-la comme point de départ pour cadrer le brief. Elle ne remplace pas votre travail de conception : vous devez encore préciser les données d'entrée, les règles déterministes, les validations humaines, les cas limites et ce qui reste interdit.
+
 ## Demande minimale utile
 
 Donnez à l'agent :
@@ -20,6 +22,12 @@ Exemple :
 
 ```text
 Utilise ce dépôt comme contexte. Si le setup local n'est pas clair, commence par $setup-projet-automatisation. Je veux une automatisation n8n qui lit un fichier CSV local, détecte les lignes incomplètes avec un script Python, puis prépare un brouillon de message. Aucun envoi externe sans validation humaine.
+```
+
+Exemple avec une fiche cas d'usage :
+
+```text
+Utilise ce dépôt comme contexte. Je pars de ma fiche cas d'usage. Aide-moi à la transformer en mini brief, puis challenge les règles, les cas limites, les secrets nécessaires et les validations humaines. Ne construis d'abord qu'une version mock/local.
 ```
 
 ## Pattern recommandé
@@ -47,6 +55,8 @@ Mode test/mock:
 Logs ou historique:
 Fréquence:
 Critère de succès:
+Cas limites à tester:
+Actions interdites:
 ```
 
 Si une ligne n'est pas claire, garder le scope en mock/local.

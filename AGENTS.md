@@ -95,6 +95,9 @@ Validation humaine:
 Fréquence:
 Secrets nécessaires:
 Logs:
+Mode test/mock:
+Cas limites:
+Actions interdites:
 ```
 
 Pattern par défaut :

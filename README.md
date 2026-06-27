@@ -26,6 +26,8 @@ Crée ou mets à jour mon contexte local, puis fais le cleanup de fin de setup q
 
 Si vous préparez une automatisation importante, demandez d'abord à votre agent de passer en mode planification. Vous pouvez aussi lui demander d'utiliser la skill `grill-me` pour challenger le brief avant de construire.
 
+Si vous partez d'une fiche cas d'usage, ne la traitez pas comme une recette. Utilisez-la pour remplir le mini brief de [docs/05-creer-des-automatisations.md](docs/05-creer-des-automatisations.md), puis construisez une première version en données fictives ou locales avant de connecter les vrais comptes.
+
 ## Choisir son chemin
 
 Le dépôt supporte quatre départs fréquents :

@@ -18,6 +18,7 @@ Skill d'entrée du dépôt. Guider l'utilisateur et son agent depuis "j'ouvre le
    ```
 
 4. Identifier les faits déjà connus et leurs preuves : prompt utilisateur, fichier existant, commande de diagnostic, ou réponse explicite.
+   Si l'utilisateur apporte une fiche cas d'usage, l'utiliser comme source de faits pour le mini brief, pas comme une recette complète.
 5. Demander les informations manquantes avant toute personnalisation de `USER.md` :
    - objectif concret ;
    - niveau d'explication souhaité ;
@@ -69,6 +70,7 @@ Le setup est terminé seulement quand :
 - `USER.md` existe localement ou l'utilisateur a choisi de ne pas le créer ;
 - le chemin actuel est noté : local, VPS, serveur maison ou serveur existant ;
 - le prochain checkpoint est explicite ;
+- les automatisations actives ont un mode test/mock, des validations humaines, des cas limites et des actions interdites explicites quand ces informations sont connues ;
 - les pistes abandonnées sont supprimées, condensées ou listées dans `Contexte à oublier ou archiver` ;
 - `git status --short` ne montre pas de contexte personnel suivi par git ;
 - les symlinks `CLAUDE.md` et `.claude/skills` sont présents ou le choix de ne pas les réparer est noté.
